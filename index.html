@@ -12,21 +12,38 @@
 <body>
    
    <div id="app">
-     <div class="container">
-         <div class="slider">
 
+      <div class="container">
+         <div class="slider">
+ 
             <div class="item active">
 
-<!-- [counter] = numero img dentro l'array  -->
+               <!-- [counter] = numero img dentro l'array  -->
                <img :src="images[counter]" alt="">
-            </div>
 
-<!-- i due tasti per cambiare foto -->
-            <div @click="prevSlide" class="prev">&larr;</div>
-            <div @click="nextSlide" class="next">&rarr;</div>
+
+                  <!-- i due tasti per cambiare foto -->
+               <div @click="prevSlide" class="prev">&larr;</div>
+               <div @click="nextSlide" class="next">&rarr;</div>
+            </div>
+               
+            
+         
+ 
+            <div class="thumbs">
+               <div class="thumb">
+                  <!-- immagini thumb -->
+                  <img :class="{active2: isActive1}" :src="images[0]" alt="">
+                  <img :class="{active2: isActive2}" :src="images[1]" alt="">
+                  <img :class="{active2: isActive3}" :src="images[2]" alt="">
+                  <img :class="{active2: isActive4}" :src="images[3]" alt="">
+                  <img :class="{active2: isActive5}":src="images[4]" alt="">
+               </div>
+            </div>
          </div>
-      </div> 
-   </div>
+      </div>
+   </div> 
+
 
 
    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
