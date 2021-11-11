@@ -19,7 +19,11 @@
             <div class="item active">
 
                <!-- [counter] = numero img dentro l'array  -->
-               <img :src="images[counter]" alt="">
+               <img :src="images[counter].url" alt="">
+               <div class="text-img">
+                  <h3>{{images[counter].title}}</h3>{{images[counter].text}}
+                  <p>{{images[counter].text}}</p>
+               </div>
 
 
                   <!-- i due tasti per cambiare foto -->
@@ -28,16 +32,12 @@
             </div>
                
             
-         
- 
             <div class="thumbs">
-               <div class="thumb">
+               <div class="thumb" v-for="(singThumb, indice) in images">
+
                   <!-- immagini thumb -->
-                  <img :class="{active2: isActive1}" :src="images[0]" alt="">
-                  <img :class="{active2: isActive2}" :src="images[1]" alt="">
-                  <img :class="{active2: isActive3}" :src="images[2]" alt="">
-                  <img :class="{active2: isActive4}" :src="images[3]" alt="">
-                  <img :class="{active2: isActive5}":src="images[4]" alt="">
+                  <img :class="{active2: isActive}" :src="singThumb.url" alt="" class="test">
+                  
                </div>
             </div>
          </div>

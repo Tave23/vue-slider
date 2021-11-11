@@ -30,10 +30,23 @@ body{
 
 .text{
    position: absolute;
+   position: relative;
    color: white;
    right: 20px;
    bottom: 20px;
    text-align: right;
+}
+
+.text-img{
+   position: absolute;
+   bottom: 0;
+   right: 5px;
+   color: white;
+   text-align: right;
+   background-color: rgba(0, 0, 0, 0.4);
+   border-radius: 20px;
+   padding: 5px 10px;
+   
 }
 
 .item img, .thumb img{
