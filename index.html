@@ -21,7 +21,7 @@
                <!-- [counter] = numero img dentro l'array  -->
                <img :src="images[counter].url" alt="">
                <div class="text-img">
-                  <h3>{{images[counter].title}}</h3>{{images[counter].text}}
+                  <h3>{{images[counter].title}}</h3>
                   <p>{{images[counter].text}}</p>
                </div>
 
@@ -36,7 +36,7 @@
                <div class="thumb" v-for="(singThumb, indice) in images">
 
                   <!-- immagini thumb -->
-                  <img :class="{active2: isActive}" :src="singThumb.url" alt="" class="test">
+                  <img :class="{active2: counter == indice}" :src="singThumb.url" alt="">
                   
                </div>
             </div>

@@ -53,28 +53,19 @@ const app = new Vue({
 
         nextSlide(){
             this.counter++;
-            this.indice++;
 
             console.log(this.counter);
-            console.log(this.indice);
-
-            // this.isActive = true;
 
             if(this.counter > this.images.length -1){
                 this.counter = 0;
             }
 
-            if(this.indice > this.images.length -1){
-                this.indice = 0;
-            }
         },
 
         prevSlide(){
             this.counter--;
-            this.indice--;
 
             console.log(this.counter);
-            console.log(this.indice);
 
             // this.isActive = true;
 
@@ -82,24 +73,14 @@ const app = new Vue({
                 this.counter = this.images.length -1;
             }
 
-            if(this.indice < 0){
-                this.indice = this.images.length -1;
-            }
-
         },
 
-        checkActive(){
-            if(this.indice == this.counter){
-           
-
-            }
-            
-        }
+       
         
     }
 
 })
 
-// funzione per aggiungere bordo bianco alla foto
+
 
     
