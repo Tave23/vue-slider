@@ -1,35 +1,42 @@
-const imgMain = document.getElementsByClassName('image-main');
-const imgSide = document.getElementsByClassName('aside-img');
+const app = new Vue({
 
-let contatore = 0;
+    el: '#app',
 
-const down = document.getElementById('down');
-const up = document.getElementById('up');
+    data:{
+        images:['img/01.jpg', 'img/02.jpg', 'img/03.jpg', 'img/04.jpg', 'img/05.jpg'],
+        
+        // inizializzo il counter con cui attivo le foto
+        counter: 0
+    },
 
-console.log(up);
-console.log(down);
+    mounted(){
 
-up.addEventListener('click', function(){
-    imgMain[contatore].classList.remove('active');
-    imgSide[contatore].classList.remove('active2');
+        // azione per far partire automaticamente la funzione "nextSlide ogni 1,5 secondi" 
+        setInterval(() => {
+            this.nextSlide();
+        }, 1500)
+    },
 
-    contatore--;
+    methods:{
 
-    if(contatore < 0) contatore = imgMain.length - 1;
+        nextSlide(){
+            this.counter++;
+            if(this.counter > this.images.length -1){
+                this.counter = 0;
+            }
+        },
 
-    imgMain[contatore].classList.add('active');
-    imgSide[contatore].classList.add('active2');
-    console.log(imgMain);
-})
+        prevSlide(){
+            this.counter--;
+            if(this.counter < 0){
+                this.counter = this.images.length -1;
+            }
+        }
 
-down.addEventListener('click', function(){
-    imgMain[contatore].classList.remove('active');
-    imgSide[contatore].classList.remove('active2');
+    }
 
-    contatore++;
+    
 
-    if(contatore > imgMain.length - 1) contatore = 0;
 
-    imgMain[contatore].classList.add('active');
-    imgSide[contatore].classList.add('active2');
+
 })
